@@ -14,6 +14,23 @@ body {
                         'footer';
 }
 
+button {
+    background-color: #00579c;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+}
+
+select {
+    background-color: #ffffff;
+    color: black;
+    border-style: solid;
+    border-color: #e2e2e2;
+    border-radius: 5px;
+}
+
 /*se agrega max-width devido a que display: none no cambiaba con el uso de display: flex en min-width: 576*/
 @media (max-width: 575px) {
     .menu {
