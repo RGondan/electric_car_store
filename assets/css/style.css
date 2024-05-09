@@ -14,15 +14,26 @@ body {
                         'footer';
 }
 
-@media only screen and (min-width: 576px) {
+/*se agrega max-width devido a que display: none no cambiaba con el uso de display: flex en min-width: 576*/
+@media (max-width: 575px) {
+    .menu {
+        display: none;
+    }
+}
+
+@media (min-width: 576px) {
     body {
+        height: 100vh;
         display: grid;
         grid-template-areas: 'header main'
-                            'header main'
-                            'header main'
-                            'header main'
-                            'header main'
-                            'header main'
+        'header main'
+        'header main'
+        'header main'
+        'header main'
+        'header main'
+        'header main'
+        'header main'
+        'header main'
                             'footer main';
     }
 
@@ -30,17 +41,23 @@ body {
         text-align: center;
     }
 
-    .brand {
-        margin: 0 auto;
+    header {
+        .brand {
+            margin: 0 auto;
+        }
+        .menu_icon {
+            display: none;
+        }
     }
 
-    .menu {
+    footer {
+        margin: 0;
+    }
+
+    .menu {   
         display: flex;
     }
 
-    .menu_icon {
-        display: none;
-    }
 }
 
 header {
@@ -54,18 +71,15 @@ header {
         padding: 1rem;
     }
 
-    .menu {
-        flex-direction: column;
-        padding: 1rem;
-        a {
-            text-decoration: none;
-            color: #ffffff;
-        }
-    }
 }
 
 .menu {
-    display: none;
+    flex-direction: column;
+    padding: 1rem;
+    a {
+        text-decoration: none;
+        color: #ffffff;
+    }
 }
 
 main, main .options, main .products{
@@ -100,6 +114,7 @@ main {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+        overflow: scroll;
         .card {
             display: flex;
             flex-direction: column;
